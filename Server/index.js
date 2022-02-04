@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 const { Mongoose } = require("mongoose");
 dotenv.config();
 const app = express();
-const Port =  5000;
+const PORT =  5000||process.env.PORT;
 app.use(express.json())
 app.use(require("./Routes/Hireme"));
 
@@ -15,7 +15,7 @@ if(process.env.NODE_ENV == "production"){
   })
 }
 
-app.listen(Port, () => {
-  console.log(`Server Running ${Port}`);
+app.listen(PORT, () => {
+  console.log(`Server Running ${PORT}`);
 });
 
